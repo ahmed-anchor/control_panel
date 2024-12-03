@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ededed;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes delete {
+  0%{
+    background: rgba(255, 0, 0, 0.27);
+  }
+  100%{
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes pickProduct {
+  0%{
+    background: rgba(255, 255, 255, 0.27);
+  }
+  100%{
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.delete-animation {
+  animation: delete .4s ease-in;
+}
+
+.pick-product {
+  animation: pickProduct .4s ease-in;
+}
