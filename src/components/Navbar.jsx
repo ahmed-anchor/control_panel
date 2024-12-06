@@ -6,7 +6,7 @@ const Navbar = () => {
     const [options, setOptions] = useState(false);
 
   return (
-    <nav className="z-50 fixed flex flex-col w-screen bg-white shadow-md px-6 py-3 mt-10x">
+    <nav className="z-50 fixed pt-[40px] flex flex-col w-screen bg-white shadow-md px-6 py-3 mt-10x">
         <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
             <Link onClick={()=> setOptions(false)} href="/" className="mr-4 text-[26px] block cursor-pointer text-slate-800 font-semibold">
                 Caff<span className='text-red-500'>ee</span>
