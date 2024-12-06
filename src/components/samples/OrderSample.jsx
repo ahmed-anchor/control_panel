@@ -35,7 +35,7 @@ const OrderSample = ({products}) => {
   if(isError) return <NetworkError networkError={isError} />
 
   return(
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit py-[100px]">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit pb-[20px]">
       {
         data?
         data.map(productData=>(

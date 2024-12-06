@@ -37,15 +37,15 @@ const Orders = () => {
   if(data.length===0) return <EmptyData />
 
   return (
-    <div className="flex justify-center items-center text-black w-full min-h-screen">
+    <div className="flex flex-col justify-around items-center text-black w-full min-h-screen">
     {
       data?
         
       data.map(order=>(
-        <div key={order._id} className="w-full h-fit flex flex-col justify-center items-center">
+        <div key={order._id} className="w-full h-fit flex flex-col justify-center items-center pb-[80px]">
           <OrderSample products={order.order} />
-          <a href={`${order.location}`} target="_blank">location</a>
-          <button onClick={()=>deleteOrder(order._id)}>Delete</button>
+          <a href={`${order.location}`} target="_blank" className="my-[10px] px-[10px] bg-slate-500">location</a>
+          <button onClick={()=>deleteOrder(order._id)} className="bg-red-300 px-[10px]">Delete</button>
         </div>
       ))
       

@@ -87,14 +87,14 @@ const page = () => {
 
       {
         data?
-        <>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit py-[60px]" >
           {
             data.map(productData => <ClientSample key={productData._id} productData={productData} deleteProduct={removeFromBucket} />)
           }
+          <div className="flex justify-center items-center w-full h-[10px]">
+            <button onClick={postOrder} className="text-black">Buy Product</button>
+          </div>
         </div>
-        <button onClick={postOrder} className="text-black absolute bottom-2 translate-[50%]">Buy Product</button>
-        </>
         : <Spinner />
       }
     </div>
