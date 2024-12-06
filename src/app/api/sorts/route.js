@@ -16,7 +16,6 @@ export async function POST(req,res) {
           },
       });
   } catch (error) {
-      console.error('Error while requesting data:', error);
       return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' },
@@ -39,7 +38,6 @@ export async function GET () {
             },
         });
     } catch (error) {
-        console.error('Error while requesting data:', error);
         return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },

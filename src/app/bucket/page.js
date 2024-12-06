@@ -45,7 +45,6 @@ const page = () => {
         setData([])
         return
       }
-      console.log(bucketData)
       const ids = bucketData.map(data=>(data.id))
       try {
         const response = await axios.post('/api/productId', { productIds: ids });
@@ -60,7 +59,6 @@ const page = () => {
         }
         setOrder(form)
         setData(edited);
-        console.log(edited)
       } catch (error) {
         setError(error.response.data.message);
       };

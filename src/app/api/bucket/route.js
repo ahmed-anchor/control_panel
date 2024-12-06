@@ -29,7 +29,6 @@ export async function POST(req,res) {
           },
       });
   } catch (error) {
-      console.error('Error while requesting data:', error);
       return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' },
@@ -42,7 +41,6 @@ export async function GET () {
   try {
     await connectDB();
     const data = await OrderModel.find();
-    console.log(data)
     return new Response(JSON.stringify({ data }), {
       status: 200,
       headers: { 'Content-Type': 'application/json', "Cache-Control": "no-store" }

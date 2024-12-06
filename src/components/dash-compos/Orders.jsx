@@ -13,9 +13,7 @@ const Orders = () => {
   async function getOrdersData() {
     try{
       const ordersData = await axios.get('/api/bucket');
-
       setData(ordersData.data.data)
-      console.log(ordersData.data.data)
     }catch(error) {
       setError(error.response.data.message)
     };
@@ -23,12 +21,10 @@ const Orders = () => {
 
   async function deleteOrder (_id) {
     try {
-
       const response = await axios.delete('/api/bucket', { data: {_id} })
-      console.log(response)
       alert(response.data.message)
     } catch (error) {
-      console.log(error.response.data.message);
+      alert(error.response.data.message);
     }
   }
 

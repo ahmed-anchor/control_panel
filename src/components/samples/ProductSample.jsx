@@ -1,11 +1,8 @@
 "use client";
 import axios from '../../../node_modules/axios/index';
-import { useRouter } from '../../../node_modules/next/navigation';
 
 const ProductSample = ({ productData, refreshCount }) => {
 
-    const router = useRouter();
-    
     async function deleteProduct () {
         try {
             const {_id} = productData

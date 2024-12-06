@@ -10,7 +10,6 @@ const OrderSample = ({products}) => {
   const [isError, setError] = useState('');
 
   async function getOrdersData () {
-    console.log(products)
     let ids = []
     products.map(order=>ids.push(order.id))
     try{
@@ -20,7 +19,6 @@ const OrderSample = ({products}) => {
         edited.push({...response.data.data[i], quantity: products[i].quantity});
       }
       setData(edited);
-      console.log(edited);
     }catch(error) {
       setError(error.response.data.message);
     }

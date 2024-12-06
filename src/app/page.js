@@ -14,7 +14,6 @@ const Home = () => {
   async function fetchData () {
     try {
       const response = await axios.get('/api/sorts');
-      console.log(response.data.data);
       const result = [];
       const seenSorts = new Set();
 

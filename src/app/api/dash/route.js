@@ -14,7 +14,6 @@ export async function GET() {
             },
         });
     } catch (error) {
-        console.error('Error while requesting data:', error);
         return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
@@ -27,11 +26,9 @@ export async function POST(request) {
         // Connect to MongoDB
         await connectDB();
 
-        
         // Parse the incoming request body
         const body = await request.json();
         
-        console.log(body);
         // Validate the required fields
         let { name, image, price, offer, sort, quantity } = body;
         if (!name || !image || !price || !sort) {
