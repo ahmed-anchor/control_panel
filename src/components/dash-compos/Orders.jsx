@@ -18,6 +18,17 @@ const Orders = () => {
       console.log(ordersData.data.data)
     }catch(error) {
       setError(error.response.data.message)
+    };
+  };
+
+  async function deleteOrder (_id) {
+    try {
+
+      const response = await axios.delete('/api/bucket', { data: {_id} })
+      console.log(response)
+      alert(response.data.message)
+    } catch (error) {
+      console.log(error.response.data.message);
     }
   }
 
@@ -36,8 +47,9 @@ const Orders = () => {
         
       data.map(order=>(
         <div key={order._id} className="w-full h-fit flex flex-col justify-center items-center">
-          <OrderSample key={order._id} products={order.order} />
+          <OrderSample products={order.order} />
           <a href={`${order.location}`} target="_blank">location</a>
+          <button onClick={()=>deleteOrder(order._id)}>Delete</button>
         </div>
       ))
       

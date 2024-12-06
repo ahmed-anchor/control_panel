@@ -45,7 +45,7 @@ const DashboardList = () => {
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit py-[100px]" >
               {
                 data.map((productSort=>(
-                  <Link href={`/dashboard/list/${productSort.sort}`} key={productSort._id} className="flex justify-center items-center w-[230px] h-[60px] bg-white rounded-md text-black">
+                  <Link href={`/dashboard/productList/${productSort.sort}`} key={productSort._id} className="flex justify-center items-center w-[230px] h-[60px] bg-white rounded-md text-black">
                     <p>{(productSort.sort.replace(/-/g, " "))}</p>
                   </Link>
                 )))

@@ -23,19 +23,20 @@ const page = () => {
       }
       const response = await axios.post('/api/bucket', {orderData})
       alert(response.data.message)
+      sessionStorage.setItem('bucket', '[]')
       setRefCount(prev=>++prev);
     } catch(error) {
       alert(error.response.data.message);
       setRefCount(prev=>++prev);
-    }
-  }
+    };
+  };
 
   async function removeFromBucket (removedProduct) {
     const bucketData = await JSON.parse(sessionStorage.getItem('bucket'));
     const newBucketData = await bucketData.filter(bucketId=>bucketId.id!==removedProduct);
     sessionStorage.setItem('bucket', JSON.stringify(newBucketData));
     setRefCount(prev=>++prev);
-  }
+  };
 
   async function getBucketData() {
     if(sessionStorage.getItem('bucket')) {

@@ -54,3 +54,19 @@ export async function GET () {
     })
   }
 }
+
+export async function DELETE (req) {
+  await connectDB();
+  const { _id } = await req.json();
+
+  try {
+    const deletedProduct = await OrderModel.findByIdAndDelete(_id);
+    if (!deletedProduct) {
+      return new Response(JSON.stringify({ message: 'Order not found' }), { status: 404 });
+    }
+
+    return new Response(JSON.stringify({ message: 'Order deleted successfully' }), { status: 200 });
+  } catch (error) {
+    return new Response(JSON.stringify({ message: 'Error deleting Order' }), { status: 500 });
+  }
+}
