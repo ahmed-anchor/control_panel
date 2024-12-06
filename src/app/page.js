@@ -14,17 +14,7 @@ const Home = () => {
   async function fetchData () {
     try {
       const response = await axios.get('/api/sorts');
-      const result = [];
-      const seenSorts = new Set();
-
-      for (const item of response.data.data) {
-          if (!seenSorts.has(item.sort)) {
-              seenSorts.add(item.sort);
-              result.push(item);
-          };
-      };
-      
-      setData(result);
+      setData(response.data.data);
     } catch (error) {
       setError(error.response.data.message);
     };

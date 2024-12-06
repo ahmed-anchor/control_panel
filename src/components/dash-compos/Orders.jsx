@@ -9,6 +9,7 @@ import OrderSample from "../samples/OrderSample";
 const Orders = () => {
   const [isError, setError] = useState('');
   const [data, setData] = useState(false);
+  const [refresh, setRef] = useState(0);
 
   async function getOrdersData() {
     try{
@@ -22,7 +23,9 @@ const Orders = () => {
   async function deleteOrder (_id) {
     try {
       const response = await axios.delete('/api/bucket', { data: {_id} })
-      alert(response.data.message)
+      setData(false);
+      setRef(prev=>++prev);
+      alert(response.data.message);
     } catch (error) {
       alert(error.response.data.message);
     }
@@ -30,14 +33,14 @@ const Orders = () => {
 
   useEffect(()=>{
     getOrdersData();
-  }, [])
+  }, [refresh])
 
   if(isError) return <NetworkError networkError={isError} />
 
   if(data.length===0) return <EmptyData />
 
   return (
-    <div className="flex flex-col justify-around items-center text-black w-full min-h-screen">
+    <div className="flex flex-col justify-around items-center text-black w-full min-h-screen pt-[71px]">
     {
       data?
         
