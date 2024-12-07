@@ -18,7 +18,12 @@ const Home = () => {
     // } catch (error) {
     //   setError(error.response.data.message);
     // };
-    const req = await fetch('/api/sorts',{cache: 'force-cache'});
+    const req = await fetch('/api/sorts',{
+      cache: 'force-cache',
+      // next: {
+      //   revalidate: 50
+      // }
+    });
     if(!req.ok) setError(req.message);
     const response = await req.json();
     console.log(response)
