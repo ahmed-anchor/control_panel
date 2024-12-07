@@ -19,7 +19,7 @@ const Home = () => {
     //   setError(error.response.data.message);
     // };
     const req = await fetch('/api/sorts',{
-      cache: 'force-cache',
+      cache: 'no-store',
       // next: {
       //   revalidate: 50
       // }
