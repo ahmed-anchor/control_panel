@@ -15,6 +15,10 @@ const page = () => {
   const [urlLocation, setLocationUrl] = useState('')
 
   async function postOrder() {
+    if(!urlLocation){
+      alert('sorry we need your location')
+      return
+    }
     try {
       
       const orderData = {
