@@ -12,18 +12,19 @@ const DashboardList = () => {
 
   async function getData() {
       try {
-        const response = await axios.get('/api/sorts');
-        const result = [];
-        const seenSorts = new Set();
+        const response = await axios.get('/api/productList');
+        console.log(response.data.data)
+        // const result = [];
+        // const seenSorts = new Set();
 
-        for (const item of response.data.data) {
-            if (!seenSorts.has(item.sort)) {
-                seenSorts.add(item.sort);
-                result.push(item);
-            };
-        };
+        // for (const item of response.data.data) {
+        //     if (!seenSorts.has(item.sort)) {
+        //         seenSorts.add(item.sort);
+        //         result.push(item);
+        //     };
+        // };
         
-        setData(result);
+        setData(response.data.data);
       } catch (error) {
         setError(error.response.data.message);
       };
@@ -45,7 +46,7 @@ const DashboardList = () => {
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit py-[100px]" >
               {
                 data.map((productSort=>(
-                  <Link href={`/dashboard/productList/${productSort.sort}`} key={productSort._id} className="flex justify-center items-center w-[230px] h-[60px] bg-white rounded-md text-black">
+                  <Link href={`/dashboard/productList/${productSort.sort}`} key={productSort.sort} className="flex justify-center items-center w-[230px] h-[60px] bg-white rounded-md text-black">
                     <p>{(productSort.sort.replace(/-/g, " "))}</p>
                   </Link>
                 )))
