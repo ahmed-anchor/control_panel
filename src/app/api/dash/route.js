@@ -10,7 +10,6 @@ export async function GET() {
             status: 200,
             headers: {
                 'Content-Type': 'application/json',
-                'Cache-Control': 'force-cache'
             },
         });
     } catch (error) {
@@ -36,7 +35,6 @@ export async function POST(request) {
                 status: 400,
                 headers: {
                     "Content-Type": "application/json",
-                    "Cache-Control": "force-cache"
                 },
             });
         }
@@ -58,7 +56,6 @@ export async function POST(request) {
             status: 201,
             headers: {
                 "Content-Type": "application/json",
-                "Cache-Control": "force-cache"
             },
         });
     } catch (error) {
@@ -66,7 +63,6 @@ export async function POST(request) {
             status: 500,
             headers: {
                 "Content-Type": "application/json",
-                "Cache-Control": "force-cache"
             },
         });
     };

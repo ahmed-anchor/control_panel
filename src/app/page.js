@@ -12,12 +12,17 @@ const Home = () => {
   const [isError, setError] = useState(false);
   
   async function fetchData () {
-    try {
-      const response = await axios.get('/api/sorts');
-      setData(response.data.data);
-    } catch (error) {
-      setError(error.response.data.message);
-    };
+    // try {
+    //   const response = await axios.get('/api/sorts');
+    //   setData(response.data.data);
+    // } catch (error) {
+    //   setError(error.response.data.message);
+    // };
+    const req = await fetch('/api/sorts',{cache: 'force-cache'});
+    if(!req.ok) setError(req.message);
+    const response = await req.json();
+    console.log(response)
+    setData(response.data)
   };
 
   useEffect(()=> {

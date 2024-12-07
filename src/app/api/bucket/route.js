@@ -12,7 +12,6 @@ export async function POST(req,res) {
           status: 200,
           headers: {
             'Content-Type': 'application/json',
-            'Cache-Control': 'force-cache'
           },
         });
       };
@@ -25,7 +24,6 @@ export async function POST(req,res) {
           status: 200,
           headers: { 
             'Content-Type': 'application/json',
-            'Cache-Control': 'force-cache'
           },
       });
   } catch (error) {
@@ -43,7 +41,7 @@ export async function GET () {
     const data = await OrderModel.find();
     return new Response(JSON.stringify({ data }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json', "Cache-Control": "no-store" }
+      headers: { 'Content-Type': 'application/json' }
     })
   } catch(error) {
     return new Response(JSON.stringify({ message: 'Internal server Error'}), {
