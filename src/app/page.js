@@ -5,6 +5,7 @@ import NetworkError from '@/components/conditions/NetworkError';
 import EmptyData from '@/components/conditions/EmptyData';
 import Spinner from '@/components/conditions/Spinner';
 import Link from '../../node_modules/next/link';
+import Image from '../../node_modules/next/image';
 
 const Home = () => {
 
@@ -46,7 +47,8 @@ const Home = () => {
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit py-[60px]" >
             {
               data.map(productSort=>(
-                <Link key={productSort._id} style={{ backgroundImage: `url(${productSort.image})` }} href={`/${productSort.sort}`} className=" w-[290px] h-[90px] rounded-md bg-center bg-cover">
+                <Link key={productSort._id}  href={`/${productSort.sort}`} >
+                  <Image src={productSort.image} width={290} height={90} className="w-[290px] h-[90px] rounded-md bg-center bg-cover"/>
                   <div className="bg-[rgba(0,0,5,0.2)] flex justify-around items-center w-full h-full backdrop-blur-[1px] rounded-md" >
                   <p className="text-white font-semibold text-[20px]">{productSort.sort.replace(/-/g," ")}</p>
                   </div>
