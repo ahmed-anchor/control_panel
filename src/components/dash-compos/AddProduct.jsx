@@ -42,11 +42,14 @@ const AddProduct = () => {
       return
     }
 
+    setIsLoading(true)
+
     var reader = new FileReader();
     reader.readAsDataURL(formData.get('image'))
     setIsLoading(true)
 
     reader.onload = async () => {
+      const imageReader= reader.result.split(",")[1]
       try {
         const response = await axios.post('/api/dash',{
           image: String(reader.result),

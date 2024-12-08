@@ -7,10 +7,10 @@ const ProductSample = ({ productData, refreshCount }) => {
         try {
             const {_id} = productData
             const response = await axios.delete('/api/productId', { data: { _id } });
-            alert(response.message);
+            alert(response.data.message);
             refreshCount();
         } catch (error) {
-            alert(error.response.data.message);
+            alert(error);
         };
     };
 

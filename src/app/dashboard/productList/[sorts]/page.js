@@ -10,6 +10,7 @@ const page = ({ params }) => {
 
   const [data, setData] = useState(false);
   const [isError, setError] = useState(false);
+  const [refreshCount,setRef] = useState(0)
 
   async function getData() {
     try {
@@ -22,7 +23,7 @@ const page = ({ params }) => {
 
   useEffect(()=> {
     getData();
-  }, []);
+  }, [refreshCount]);
 
   if(data.length===0) return <EmptyData />
 
@@ -34,7 +35,7 @@ const page = ({ params }) => {
         data?
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit py-[60px]">
           {
-            data.map(product => <ProductSample key={product._id} productData={product} />)
+            data.map(product => <ProductSample refreshCount={()=>setRef(prev=>++prev)} key={product._id} productData={product} />)
           }
         </div>
         :<Spinner/>
