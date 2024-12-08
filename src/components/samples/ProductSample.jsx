@@ -10,7 +10,7 @@ const ProductSample = ({ productData, refreshCount }) => {
             alert(response.data.message);
             refreshCount();
         } catch (error) {
-            alert(error.response.message);
+            alert(error.response.data.message);
         };
     };
 

@@ -13,10 +13,9 @@ const DashboardList = () => {
   async function getData() {
       try {
         const response = await axios.get('/api/productList');
-        console.log(response.data.data)
         setData(response.data.data);
       } catch (error) {
-        setError(error.response.message);
+        setError(error.response.data.message);
       };
   };
 

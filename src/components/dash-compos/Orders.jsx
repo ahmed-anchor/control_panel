@@ -16,7 +16,7 @@ const Orders = () => {
       const ordersData = await axios.get('/api/bucket');
       setData(ordersData.data.data)
     }catch(error) {
-      setError(error.response.message)
+      setError(error.response.data.message)
     };
   };
 

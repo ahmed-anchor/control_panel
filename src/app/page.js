@@ -16,10 +16,10 @@ const Home = () => {
     try {
       const response = await axios.get('/api/sorts');
       setData(response.data.data);
-      console.log(response.data.data[2].image)
+      // console.log(response.data.data[2].image)
     } catch (error) {
       console.log(error)
-      setError(error.response.message);
+      setError(error.response.data.message);
     };
   };
 
