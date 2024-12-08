@@ -1,6 +1,6 @@
 import connectDB from "../../../../config/database";
 import DashboardModel from "../../../../models/dashboardModel";
-
+import { NextResponse } from "../../../../node_modules/next/server";
 
 export async function GET () {
   try {
@@ -19,14 +19,14 @@ export async function GET () {
         },
       ]);
 
-      return new Response(JSON.stringify({ data }), {
+      return NextResponse.json({ data }, {
           status: 200,
           headers: { 
               'Content-Type': 'application/json',
           },
       });
   } catch (error) {
-      return new Response(JSON.stringify({ message: 'Internal Server Error' }), {
+      return NextResponse.json({ message: 'Internal Server Error' }, {
           status: 500,
           headers: { 'Content-Type': 'application/json' },
       });
