@@ -1,7 +1,7 @@
 import DashboardModel from "../../../../models/dashboardModel";
 import connectDB from "../../../../config/database";
 import { NextResponse } from "../../../../node_modules/next/server";
-import sharp from "sharp";
+
 
 export async function GET() {
     try {
@@ -42,15 +42,7 @@ export async function POST(request) {
             });
         }
         if(!quantity) quantity=1
-
-        // const imageBuffer = Buffer.from(image, "base64");
-        // const optimizedImageBuffer = await sharp(imageBuffer)
-        //   .webp({ quality: 45 }) // Convert to WebP with 75% quality
-        //   .toBuffer();
-
          
-
-
         // Create a new document in MongoDB
         await DashboardModel.create({
             name,
