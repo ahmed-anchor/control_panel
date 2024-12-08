@@ -63,7 +63,7 @@ const AddProduct = () => {
         setResponse(response.data.message)
       } catch (error) {
         setSuccess(false)
-        setResponse(error.response.data.message)
+        setResponse(error.response.message)
       };
     };
   };

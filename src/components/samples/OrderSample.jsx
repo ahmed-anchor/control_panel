@@ -20,7 +20,7 @@ const OrderSample = ({products}) => {
       }
       setData(edited);
     }catch(error) {
-      setError(error.response.data.message);
+      setError(error.response.message);
     }
   };
 

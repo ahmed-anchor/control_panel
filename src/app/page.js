@@ -18,7 +18,8 @@ const Home = () => {
       setData(response.data.data);
       console.log(response.data.data[2].image)
     } catch (error) {
-      setError(error.response.data.message);
+      console.log(error)
+      setError(error.response.message);
     };
   };
 

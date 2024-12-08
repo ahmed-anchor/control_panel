@@ -30,7 +30,7 @@ const page = () => {
       sessionStorage.setItem('bucket', '[]')
       setRefCount(prev=>++prev);
     } catch(error) {
-      alert(error.response.data.message);
+      alert(error.response.message);
       setRefCount(prev=>++prev);
     };
   };
@@ -64,7 +64,7 @@ const page = () => {
         setOrder(form)
         setData(edited);
       } catch (error) {
-        setError(error.response.data.message);
+        setError(error.response.message);
       };
       return
     }

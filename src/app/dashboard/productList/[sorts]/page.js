@@ -17,7 +17,7 @@ const page = ({ params }) => {
       const response = await axios.post('/api/sorts', { sortProduct: params.sorts });
       setData(response.data.data);
     } catch (error) {
-      setError(error.response.data.message);
+      setError(error.response.message);
     };
   };
 
