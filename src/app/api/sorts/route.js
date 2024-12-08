@@ -1,5 +1,6 @@
 import DashboardModel from "../../../../models/dashboardModel";
 import connectDB from "../../../../config/database";
+import { NextResponse } from "../../../../node_modules/next/server";
 
 export async function POST(req,res) {
   
@@ -42,7 +43,7 @@ export async function GET () {
             },
         ]);
 
-        return new Response(JSON.stringify({ data }), {
+        return new NextResponse(JSON.stringify({ data }), {
             status: 200,
             headers: { 
                 'Content-Type': 'application/json',
