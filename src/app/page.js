@@ -13,22 +13,12 @@ const Home = () => {
   const [isError, setError] = useState(false);
   
   async function fetchData () {
-    // try {
-    //   const response = await axios.get('/api/sorts');
-    //   setData(response.data.data);
-    // } catch (error) {
-    //   setError(error.response.data.message);
-    // };
-    const req = await fetch('/api/sorts',{
-      cache: 'no-store',
-      // next: {
-      //   revalidate: 50
-      // }
-    });
-    if(!req.ok) setError(req.message);
-    const response = await req.json();
-    console.log(response)
-    setData(response.data)
+    try {
+      const response = await axios.get('/api/sorts');
+      setData(response.data.data);
+    } catch (error) {
+      setError(error.response.data.message);
+    };
   };
 
   useEffect(()=> {
@@ -44,13 +34,13 @@ const Home = () => {
       {
         data?
         (
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit py-[60px]" >
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit pt-[120px]" >
             {
               data.map(productSort=>(
                 <Link key={productSort._id}  href={`/${productSort.sort}`} >
-                  <Image src={productSort.image} width={290} height={90} className="w-[290px] h-[90px] rounded-md bg-center bg-cover"/>
-                  <div className="bg-[rgba(0,0,5,0.2)] flex justify-around items-center w-full h-full backdrop-blur-[1px] rounded-md" >
-                  <p className="text-white font-semibold text-[20px]">{productSort.sort.replace(/-/g," ")}</p>
+                  <Image src={productSort.image} quality={5} width={290} height={130} loading="lazy" alt={'nothing here'} className="w-[290px] h-[130px] rounded-md bg-center bg-cover"/>
+                  <div className="bg-[rgba(0,0,5,0.2)] relative flex justify-around items-center w-full h-full backdrop-blur-[1px] rounded-md" >
+                    <p className="text-white font-semibold text-[20px]">{productSort.sort.replace(/-/g," ")}</p>
                   </div>
                 </Link>
               ))
