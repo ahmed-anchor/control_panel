@@ -38,7 +38,7 @@ const Home = () => {
             {
               data.map(productSort=>(
                 <Link key={productSort._id}  href={`/${productSort.sort}`} >
-                  <Image src={productSort.image} quality={5} width={290} height={130} loading="lazy" alt={'nothing here'} className="w-[290px] h-[130px] rounded-md bg-center bg-cover"/>
+                  <Image src={productSort.image} quality={1} width={290} height={130} loading="lazy" alt={'nothing here'} className="w-[290px] h-[130px] rounded-md bg-center bg-cover"/>
                   <div className="bg-[rgba(0,0,5,0.2)] relative flex justify-around items-center w-full h-full backdrop-blur-[1px] rounded-md" >
                     <p className="text-white font-semibold text-[20px]">{productSort.sort.replace(/-/g," ")}</p>
                   </div>
