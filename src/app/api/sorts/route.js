@@ -12,7 +12,7 @@ export async function POST(req) {
           status: 200,
           headers: { 
               'Content-Type': 'application/json',
-              'Cache-Control': 'public, max-age=120'
+              'Cache-Control': 'private, max-age=120'
           },
       });
   } catch (error) {
