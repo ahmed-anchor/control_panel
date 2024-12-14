@@ -13,7 +13,9 @@ const page = ({ params }) => {
 
   async function getData() {
     try {
-      const response = await axios.post('/api/sorts', { sortProduct: params.sorts });
+      const response = await axios.post('/api/sorts', { sortProduct: params.sorts }, {headers: {
+        'Cache-Control': 'public, max-age=120'
+      }});
       setData(response.data.data);
     } catch (error) {
       setError(error.response.data.message);
