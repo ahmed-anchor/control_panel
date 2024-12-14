@@ -14,11 +14,15 @@ const Home = () => {
   
   async function fetchData () {
     try {
-      const response = await axios.get('/api/sorts');
+      const response = await axios.get('/api/sorts', {
+        headers: {
+        'Cache-Control': 'private, max-age=120'
+        }
+      });
       setData(response.data.data);
     } catch (error) {
       setError(error.response.data.message);
-    };
+    };    
   };
 
   useEffect(()=> {
