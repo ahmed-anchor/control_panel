@@ -79,8 +79,8 @@ const page = () => {
             setLocationUrl(`https://www.google.com/maps/search/?api=1&query=${position.coords.latitude}%2C${position.coords.longitude}`)
         }
       );
-    }
-  }, [refCount])
+    };
+  }, [refCount]);
 
   if(data.length===0) return <EmptyData />
 
