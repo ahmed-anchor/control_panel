@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="z-50 fixed flex flex-col w-screen bg-white shadow-md px-6 py-3 mt-10x">
         <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
             <Link onClick={()=> setOptions(false)} href="/" className="mr-4 text-[26px] block cursor-pointer text-slate-800 font-semibold">
-                Caff<span className='text-red-500'>ee</span>
+                bra<span className='text-red-500'>nd</span>
             </Link>
             <div className="flex justify-between">
                 <ul className="sm:flex mt-0 mb-0 flex-row hidden sm:gap-6">

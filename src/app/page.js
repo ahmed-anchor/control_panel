@@ -5,7 +5,6 @@ import NetworkError from '@/components/conditions/NetworkError';
 import EmptyData from '@/components/conditions/EmptyData';
 import Spinner from '@/components/conditions/Spinner';
 import Link from '../../node_modules/next/link';
-import Image from '../../node_modules/next/image';
 
 const Home = () => {
 
@@ -14,11 +13,13 @@ const Home = () => {
   
   async function fetchData () {
     try {
-      const response = await axios.get('/api/sorts', {
-        headers: {
-        'Cache-Control': 'private, max-age=100'
+      const response = await axios.get('/api/sorts',
+        {
+          headers: {
+            'Cache-Control': 'private, max-age=20'
+          }
         }
-      });
+      );
       setData(response.data.data);
     } catch (error) {
       setError(error.response.data.message);
@@ -44,10 +45,9 @@ const Home = () => {
                 <Link key={productSort._id}
                 href={`/${productSort.sort}`} 
                 style={{backgroundImage: `url(${productSort.image})`}}
-                className="bg-contain bg-no-repeat bg-center w-[280px] h-[100px]"
+                className="bg-cover rounded-md bg-no-repeat bg-center w-[280px] h-[100px]"
                 onClick={()=>setData(false)}
                 >
-                {/* <Image src={productSort.image} quality={.1} width={290} height={130} loading="lazy" alt={'nothing here'} className="w-[290px] h-[130px] rounded-md bg-center bg-cover"/> */}
                 <div className="bg-[rgba(0,0,5,0.2)] relative flex justify-around items-center w-100 h-[100%] backdrop-blur-[1px] rounded-md" >
                   <p className="text-white font-semibold text-[20px]">{productSort.sort.replace(/-/g," ")}</p>
                 </div>

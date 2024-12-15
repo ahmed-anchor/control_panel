@@ -26,9 +26,9 @@ const page = () => {
         location: urlLocation
       }
       const response = await axios.post('/api/bucket', {orderData})
-      alert(response.data.message)
       sessionStorage.setItem('bucket', '[]')
       setRefCount(prev=>++prev);
+      alert(response.data.message);
     } catch(error) {
       alert(error.response.message);
       setRefCount(prev=>++prev);
