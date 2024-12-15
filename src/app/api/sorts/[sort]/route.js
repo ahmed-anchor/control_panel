@@ -13,7 +13,7 @@ export async function GET(req, { params }) {
           status: 200,
           headers: {
               'Content-Type': 'application/json',
-              'Cache-Control': 'public, max-age=60'
+              'Cache-Control': 'private, max-age=60'
           },
       });
   } catch (error) {

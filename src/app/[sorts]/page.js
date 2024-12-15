@@ -21,6 +21,7 @@ const page = ({ params }) => {
       }
     );
       setData(response.data.data);
+      console.log(response.data.data)
     } catch (error) {
       setError(error.response.data.message);
       setTimeout(()=> {

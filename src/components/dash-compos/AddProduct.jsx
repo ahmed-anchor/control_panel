@@ -46,7 +46,6 @@ const AddProduct = () => {
 
     var reader = new FileReader();
     reader.readAsDataURL(formData.get('image'))
-    setIsLoading(true)
 
     reader.onload = async () => {
       try {
@@ -60,6 +59,9 @@ const AddProduct = () => {
         })
         setSuccess(true)
         setResponse(response.data.message)
+        setTimeout(()=>{
+          location.reload();
+        }, 3000)
       } catch (error) {
         setSuccess(false)
         setResponse(error.response.data.message)
@@ -100,21 +102,11 @@ const AddProduct = () => {
             <div className="flex flex-col">
               <label htmlFor='sort' className='cursor-pointer pb-3 font-sans font-semibold'>Sort Product</label>
               <select onChange={eventHandler} value={data.sort} id="sort" name='sort' className="w-[155px] h-[30px] border-[2px] border-black rounded-md focus:outline-none text-gray-500 text-center">
-                <option value='Hot-Coffee' >Hot Coffee</option>
-                <option value='Ice-Coffee'>Ice Coffee</option>
-                <option value='Latte-Flavor'>Latte Flavor</option>
-                <option value='Frappuccino'>Frappuccino</option>
-                <option value='Frappe'>Frappe</option>
-                <option value='Milk-Shake'>Milk Shake</option>
-                <option value='Smoothie'>Smoothie</option>
-                <option value='Energy-Drink'>Energy Drink</option>
-                <option value='Soda-Drinks'>Soda Drinks</option>
-                <option value='Iced-Drinks'>Iced Drinks</option>
-                <option value='Hot-Drinks'>Hot Drinks</option>
-                <option value='Pan-Cake'>Pan Cake</option>
-                <option value='Waffle'>Waffle</option>
-                <option value='Dessert'>Dessert</option>
-                <option value='Extra-Dessert'>Extra Dessert</option>
+                <option value='Hoodies' >Hoodies</option>
+                <option value='Jeans' >Jeans</option>
+                <option value='Sweet-Pants' >Sweet Pants</option>
+                <option value='Jackets' >Jacket</option>
+                <option value='Caps' >Cap</option>
               </select>
             </div>
             <div className="flex flex-col">

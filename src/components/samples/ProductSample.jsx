@@ -7,8 +7,8 @@ const ProductSample = ({ productData, refreshCount }) => {
         try {
             const {_id} = productData
             const response = await axios.delete('/api/productId', { data: { _id } });
-            alert(response.data.message);
             refreshCount();
+            alert(response.data.message);
         } catch (error) {
             alert(error.response.data.message);
         };
@@ -41,3 +41,6 @@ const ProductSample = ({ productData, refreshCount }) => {
 };
 
 export default ProductSample;
+
+
+// https://www.pornhub.com/view_video.php?viewkey=ph5ac34002c64b9

@@ -10,7 +10,7 @@ const page = ({ params }) => {
 
   const [data, setData] = useState(false);
   const [isError, setError] = useState(false);
-  const [refreshCount,setRef] = useState(0)
+  const [count,setRef] = useState(0)
 
   async function getData() {
     try {
@@ -27,7 +27,7 @@ const page = ({ params }) => {
 
   useEffect(()=> {
     getData();
-  }, [refreshCount]);
+  }, [count]);
 
   if(data.length===0) return <EmptyData />
 
