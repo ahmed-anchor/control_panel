@@ -13,7 +13,7 @@ const OrderSample = ({products}) => {
     let ids = []
     products.map(order=>ids.push(order.id))
     try{
-      const response = await axios.get(`/api/productId/`, {productIds: ids});
+      const response = await axios.post(`/api/productId/`, {productIds: ids});
       let edited = []
       for (let i = 0; i < response.data.data.length; i++) {
         edited.push({...response.data.data[i], quantity: products[i].quantity});
