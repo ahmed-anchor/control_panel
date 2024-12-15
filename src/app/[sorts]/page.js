@@ -13,9 +13,7 @@ const page = ({ params }) => {
 
   async function getData() {
     try {
-      const response = await axios.post('/api/sample', { sortProduct: params.sorts }, {headers: {
-        'Cache-Control': 'private, max-age=120'
-      }});
+      const response = await axios.get(`/api/sorts/${params.sorts.toString()}`);
       setData(response.data.data);
     } catch (error) {
       setError(error.response.data.message);

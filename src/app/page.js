@@ -16,7 +16,7 @@ const Home = () => {
     try {
       const response = await axios.get('/api/sorts', {
         headers: {
-        'Cache-Control': 'private, max-age=120'
+        'Cache-Control': 'private, max-age=100'
         }
       });
       setData(response.data.data);
@@ -38,12 +38,12 @@ const Home = () => {
       {
         data?
         (
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit pt-[120px]" >
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-7 items-center w-fit h-fit pt-[100px]" >
             {
               data.map(productSort=>(
                 <Link key={productSort._id} href={`/${productSort.sort}`} >
                 <Image src={productSort.image} quality={.1} width={290} height={130} loading="lazy" alt={'nothing here'} className="w-[290px] h-[130px] rounded-md bg-center bg-cover"/>
-                <div className="bg-[rgba(0,0,5,0.2)] relative flex justify-around items-center w-full h-full backdrop-blur-[1px] rounded-md" >
+                <div className="bg-[rgba(0,0,5,0.2)] relative flex justify-around items-center w-100 h-[100%] backdrop-blur-[1px] rounded-md" >
                   <p className="text-white font-semibold text-[20px]">{productSort.sort.replace(/-/g," ")}</p>
                 </div>
               </Link>
