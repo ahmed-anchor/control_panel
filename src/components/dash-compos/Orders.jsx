@@ -35,9 +35,9 @@ const Orders = () => {
     getOrdersData();
   }, [refresh])
 
-  if(isError) return <NetworkError networkError={isError} />
-
   if(data.length===0) return <EmptyData />
+
+  if(isError) return <NetworkError networkError={isError} />
 
   return (
     <div className="flex flex-col justify-around items-center text-black w-full min-h-screen pt-[71px]">
