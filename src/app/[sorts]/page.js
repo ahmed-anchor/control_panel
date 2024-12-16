@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from '../../../node_modules/axios/index';
 import Spinner from '@/components/conditions/Spinner';
 import ClientProduct from '@/components/samples/ClientProduct';
 import NetworkError from '@/components/conditions/NetworkError';
+import EmptyData from '@/components/conditions/EmptyData';
 
 const page = ({ params }) => {
 
