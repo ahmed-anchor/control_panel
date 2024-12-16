@@ -34,6 +34,8 @@ const page = ({ params }) => {
     getData();
   }, [refreshCount]);
 
+  if(data.length===0) return <EmptyData />
+
   if(isError) return <NetworkError networkError={isError} />
 
   return (
