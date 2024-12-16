@@ -80,8 +80,8 @@ const AddProduct = () => {
         isLoading? <Spinner />:
         <form action={onSubmitHandler} className="w-[400px] h-screen font-sans">
         <ul className="flex flex-col justify-evenly items-center w-full h-full">
-          <li className="flex flex-col">
-            <label htmlFor='image' className='cursor-pointer font-sans flex justify-center items-center flex-col p-3 bg-gray-50 rounded-md border-dashed border-gray-400 border-[2px] hover:bg-gray-100 shadow-md'>
+          <li className="flex flex-col pt-[40px]">
+            <label htmlFor='image' className='cursor-pointer max-w-[180px] max-h-[160px] font-sans flex justify-center items-center flex-col p-3 bg-gray-50 rounded-md border-dashed border-gray-400 border-[2px] hover:bg-gray-100 shadow-md'>
               {
                 imageUrl? <img src={imageUrl} className="w-[190] h-fit" alt='no lgo' />:
                 <>
@@ -95,12 +95,12 @@ const AddProduct = () => {
             </label>
           </li>
           <li className="flex flex-col items-center w-[80%]">
-            <label htmlFor='name' className='cursor-pointer pb-3 font-sans font-semibold'>Product Name</label>
+            <label htmlFor='name' className='cursor-pointer pb-2 font-sans font-semibold'>Product Name</label>
             <input onChange={eventHandler} value={data.name} id="name" type="name" name="name" className='w-[260px] h-[37px] border-[2px] cursor-pointer border-black rounded-md shadow-md focus:outline-none focus:border-green-500 text-center' placeholder='Product Name'/>
           </li>
           <li className="flex justify-evenly items-center w-[80%]">
             <div className="flex flex-col">
-              <label htmlFor='sort' className='cursor-pointer pb-3 font-sans font-semibold'>Sort Product</label>
+              <label htmlFor='sort' className='cursor-pointer pb-2 font-sans font-semibold'>Sort Product</label>
               <select onChange={eventHandler} value={data.sort} id="sort" name='sort' className="w-[155px] h-[30px] border-[2px] border-black rounded-md focus:outline-none text-gray-500 text-center">
                 <option value='Hoodies' >Hoodies</option>
                 <option value='Jeans' >Jeans</option>
@@ -110,22 +110,22 @@ const AddProduct = () => {
               </select>
             </div>
             <div className="flex flex-col">
-              <label htmlFor='price' className='cursor-pointer pb-3 font-sans font-semibold'>Price</label>
+              <label htmlFor='price' className='cursor-pointer pb-2 font-sans font-semibold'>Price</label>
               <input onChange={eventHandler} value={data.price} type='number' name='price' id='price' placeholder='00.0' className="w-[80px] h-[30px] border-[2px] border-black rounded-md focus:outline-none text-center" />
             </div>
           </li>
           <li className="flex justify-evenly items-center w-[80%]">
             <div className="flex flex-col" >
-              <label htmlFor='offer' className='cursor-pointer pb-3 font-sans font-semibold'>Offer</label>
+              <label htmlFor='offer' className='cursor-pointer pb-2 font-sans font-semibold'>Offer</label>
               <input onChange={eventHandler} value={data.offer} id="offer" type="number" name="offer" className='w-[100px] h-[30px] border-[2px] cursor-pointer border-black rounded-md shadow-md focus:outline-none focus:border-green-500 text-center' placeholder='00.0'/>
             </div>
             <div className="flex flex-col" >
-              <label htmlFor='quantity' className='cursor-pointer pb-3 font-sans font-semibold'>Quantity</label>
+              <label htmlFor='quantity' className='cursor-pointer pb-2 font-sans font-semibold'>Quantity</label>
               <input onChange={eventHandler} value={data.quantity} id="quantity" type="number" name="quantity" className='w-[135px] h-[30px] border-[2px] cursor-pointer border-black rounded-md shadow-md focus:outline-none focus:border-green-500 text-center' placeholder='1'/>
             </div>
           </li>
           <li>
-            <button className="bg-gray-300 px-4 py-1 rounded-md">Submit</button>
+            <button className="bg-gray-300 px-4 py-1 mb-16 rounded-md">Submit</button>
           </li>
         </ul>
       </form>
