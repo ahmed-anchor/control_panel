@@ -16,7 +16,7 @@ const Home = () => {
       const response = await axios.get('/api/sorts',
         {
           headers: {
-            'Cache-Control': 'private, max-age=5'
+            'Cache-Control': 'private, max-age=100'
           }
         }
       );
