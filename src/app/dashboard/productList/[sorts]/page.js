@@ -16,7 +16,7 @@ const page = ({ params }) => {
     try {
       const response = await axios.get(`/api/sorts/${params.sorts.toString()}`, { 
         headers: {
-          'Cache-Control': 'private, max-age=15'
+          'Cache-Control': 'must-revalidate'
         }
       });
       setData(response.data.data);
