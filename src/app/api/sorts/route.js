@@ -25,8 +25,8 @@ export async function GET () {
             status: 200,
             headers: { 
                 'Content-Type': 'application/json',
-                'Cache-Control': 'must-revalidate'
-            },
+              },
+              // 'Cache-Control': 'must-revalidate'
         });
     } catch (error) {
         return NextResponse.json({ message: 'Internal Server Error' }, {
