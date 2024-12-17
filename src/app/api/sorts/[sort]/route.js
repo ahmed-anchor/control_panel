@@ -13,8 +13,8 @@ export async function GET(req, { params }) {
           status: 200,
           headers: {
               'Content-Type': 'application/json',
+              'Cache-Control': 'no-store'
             },
-            // 'Cache-Control': 'must-revalidate'
       });
   } catch (error) {
       return NextResponse.json({ message: 'Internal Server Error' }, {

@@ -14,11 +14,11 @@ const Home = () => {
   async function fetchData () {
     try {
       const response = await axios.get('/api/sorts',
-        {
-          headers: {
-            'Cache-Control': 'no-cache'
-          }
-        }
+        // {
+        //   headers: {
+        //     'Cache-Control': 'no-cache'
+        //   }
+        // }
       );
       setData(response.data.data);
     } catch (error) {
