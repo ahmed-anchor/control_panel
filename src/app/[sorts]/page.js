@@ -15,11 +15,11 @@ const page = ({ params }) => {
   async function getData() {
     try {
       const response = await axios.get(`/api/sorts/${params.sorts.toString()}`, 
-      // {
-      //   headers: {
-      //     'Cache-Control': 'no-cache'
-      //   }
-      // }
+      {
+        headers: {
+          'Cache-Control': 'private, max-age=5'
+        }
+      }
     );
       setData(response.data.data);
       console.log(response.data.data)
