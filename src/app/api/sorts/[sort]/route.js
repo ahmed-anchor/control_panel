@@ -13,7 +13,7 @@ export async function GET(req, { params }) {
           status: 200,
           headers: {
               'Content-Type': 'application/json',
-            //   'Cache-Control': 'must-revalidate'
+              'Cache-Control': 'no-cache'
             },
       });
   } catch (error) {

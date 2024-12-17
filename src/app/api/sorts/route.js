@@ -25,7 +25,7 @@ export async function GET () {
             status: 200,
             headers: { 
                 'Content-Type': 'application/json',
-                // 'Cache-Control': 'must-revalidate'
+                'Cache-Control': 'no-cache'
               },
         });
     } catch (error) {
