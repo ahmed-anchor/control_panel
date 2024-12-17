@@ -16,7 +16,7 @@ const Home = () => {
       const response = await axios.get('/api/sorts',
         {
           headers: {
-            'Cache-Control': 'no-store'
+            'Cache-Control': 'no-cache'
           }
         }
       );
