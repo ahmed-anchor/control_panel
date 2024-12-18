@@ -6,7 +6,7 @@ import DashboardModel from "../../../../../models/dashboardModel";
 
 export async function GET(req, { params }) {
   try {
-        await connectDB();
+      await connectDB();
       const {sort} = params;
       const data = await DashboardModel.find({ sort: sort });
       return NextResponse.json({ data }, {
