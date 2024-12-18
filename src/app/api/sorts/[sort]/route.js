@@ -13,10 +13,10 @@ export async function GET(req, { params }) {
           status: 200,
           headers: {
               'Content-Type': 'application/json',
-              'Cache-Control': 'no-cache, no-store, must-revalidate, proxy-revalidate',
-              'Pragma': 'no-cache',
+              'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
+              'Pragma': 'no-cache, must-revalidate, prox-revalidate',
               'Expires': '0',
-              'Surrogate-Control': 'no-store'
+              'Surrogate-Control': 'no-cache, must-revalidate, proxy-revalidate'
             },
       });
   } catch (error) {

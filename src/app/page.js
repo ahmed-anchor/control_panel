@@ -16,9 +16,9 @@ const Home = () => {
       const response = await axios.get('/api/sorts',
         {
           headers: {
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache',
-            'Expires': '0'
+            'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
+            'Pragma': 'no-cache, must-revalidate, prox-revalidate',
+            'Expires': '0',
           } 
         }
       );
