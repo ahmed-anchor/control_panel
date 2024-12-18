@@ -13,24 +13,22 @@ const page = ({ params }) => {
   const [refreshCount, setRefreshCount] = useState(0)
 
   async function getData() {
-    try {
-      const response = await axios.get(`/api/sorts/${params.sorts.toString()}`, 
-      {
-        headers: {
-          'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
-          'Pragma': 'no-cache, must-revalidate, prox-revalidate',
-          'Expires': '0',
-        }
+    fetch(`/api/sorts/${params.sorts.toString()}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache, must-revalidate, prox-revalidate',
+        'Expires': '0',
       }
-    );
-      setData(response.data.data);
-      console.log(response.data.data)
-    } catch (error) {
-      setError(error.response.data.message);
+    })
+    .then(res=>res.json())
+    .then(response=>setData(response.data))
+    .catch(error=>{
+      setError(error.message)
       setTimeout(()=> {
         setRefreshCount(prev=>++prev);
       }, 5000);
-    };
+    })
   };
 
   useEffect(()=> {

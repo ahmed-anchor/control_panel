@@ -12,20 +12,17 @@ const Home = () => {
   const [isError, setError] = useState(false);
   
   async function fetchData () {
-    try {
-      const response = await axios.get('/api/sorts',
-        {
-          headers: {
-            'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
-            'Pragma': 'no-cache, must-revalidate, prox-revalidate',
-            'Expires': '0',
-          } 
-        }
-      );
-      setData(response.data.data);
-    } catch (error) {
-      setError(error.response.data.message);
-    };    
+    fetch('/api/sorts', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache, must-revalidate, prox-revalidate',
+        'Expires': '0',
+      }
+    })
+    .then(res=>res.json())
+    .then(response=>setData(response.data))
+    .catch(error=>setError(error.message))
   };
 
   useEffect(()=> {
