@@ -17,7 +17,7 @@ const page = ({ params }) => {
       const response = await axios.get(`/api/sorts/${params.sorts.toString()}`, 
       {
         headers: {
-          'Cache-Control': 'no-cache'
+          'Cache-Control': 'no-store'
         }
       }
     );
