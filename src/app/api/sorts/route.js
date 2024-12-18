@@ -6,6 +6,7 @@ export async function GET () {
     try {
         await connectDB();
   
+        
         const data = await DashboardModel.aggregate([
             {
               $sort: { _id: 1 }, // Sort by any field to decide which product to consider first
