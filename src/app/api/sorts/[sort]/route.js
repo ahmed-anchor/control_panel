@@ -14,7 +14,7 @@ export async function GET(req, { params }) {
           headers: {
               'Content-Type': 'application/json',
               'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
-              'Pragma': 'no-cache, must-revalidate, prox-revalidate',
+              'Pragma': 'no-cache, must-revalidate, proxy-revalidate',
               'Expires': '0',
               'Surrogate-Control': 'no-cache, must-revalidate, proxy-revalidate'
             },
