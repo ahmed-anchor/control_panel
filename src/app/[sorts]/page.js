@@ -19,7 +19,7 @@ const page = ({ params }) => {
         'Cache-Control': 'no-cache, must-revalidate, proxy-revalidate',
         'Pragma': 'no-cache, must-revalidate, prox-revalidate',
         'Expires': '0',
-      }
+      }, cache: 'no-cache'
     })
     .then(res=>res.json())
     .then(response=>setData(response.data))
