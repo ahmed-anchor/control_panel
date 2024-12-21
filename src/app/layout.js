@@ -24,13 +24,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
-        <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC}`} crossOrigin={`anonymous`} strategy={`afterInteractive`} ></Script>
+      <Head>
+        <meta name="google-adsense-account" content="ca-pub-7818225422285491"/>
+      </Head>
+        <Script async src={`https://pagead2.googlesyndication.com /pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC}`} crossOrigin={`anonymous`} strategy={`afterInteractive`} ></Script>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-white`}
         >
         <Navbar />
+        <ins
+      className="adsbygoogle"
+      style={{ display: "block" }}
+      data-ad-client={client}
+      data-ad-slot={slot}
+      data-ad-format={format}
+      data-full-width-responsive={responsive}
+    ></ins>
         {children}
       </body>
     </html>
