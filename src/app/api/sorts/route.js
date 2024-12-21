@@ -1,6 +1,6 @@
 import DashboardModel from "../../../../models/dashboardModel";
 import connectDB from "../../../../config/database";
-import { NextResponse } from "../../../../node_modules/next/server";
+import { NextResponse } from "next/server";
 
 export async function GET () {
     try {

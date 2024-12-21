@@ -46,7 +46,6 @@ const Home = () => {
                 href={`/${productSort.sort}`} 
                 style={{backgroundImage: `url(${productSort.image})`}}
                 className="bg-cover rounded-md bg-no-repeat bg-center w-[280px] h-[100px]"
-                onClick={()=>setData(false)}
                 >
                 <div className="bg-[rgba(0,0,5,0.2)] relative flex justify-around items-center w-100 h-[100%] backdrop-blur-[1px] rounded-md" >
                   <p className="text-white font-semibold text-[20px]">{productSort.sort.replace(/-/g," ")}</p>

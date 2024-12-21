@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Head from "../../node_modules/next/head";
 
 // Local fonts
 const geistSans = localFont({
@@ -22,6 +23,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="google-adsense-account" content="ca-pub-7818225422285491" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-white`}
         >
