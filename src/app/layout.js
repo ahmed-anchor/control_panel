@@ -24,10 +24,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <meta name={`google-adsense-account`} content={`ca-pub-7818225422285491`} />
-        <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7818225422285491`} crossOrigin={`anonymous`} strategy={`afterInteractive`} />
-      </Head>
+
+        <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC}`} crossOrigin={`anonymous`} strategy={`afterInteractive`} ></Script>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-white`}
         >
