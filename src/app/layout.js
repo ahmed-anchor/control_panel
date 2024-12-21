@@ -33,14 +33,6 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} bg-white`}
         >
         <Navbar />
-        <ins
-      className="adsbygoogle"
-      style={{ display: "block" }}
-      data-ad-client={client}
-      data-ad-slot={slot}
-      data-ad-format={format}
-      data-full-width-responsive={responsive}
-    ></ins>
         {children}
       </body>
     </html>
